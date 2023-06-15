@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
- * main: the main function for entry
  * description: a c program prints by puts
+ * main: the main function for entry
  * Return: 0 Always
 */
 int main(void)
