@@ -1,8 +1,8 @@
 #include <stdio.h>
 /**
- * description: a c program prints by puts
  * main: the main function for entry
  * Return: 0 Always
+ * short description: c program prints by using puts
 */
 int main(void)
 {
