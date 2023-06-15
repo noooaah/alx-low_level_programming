@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main: the main function for entry
+ * main - the main function for entry
  * Return: 0 Always
  * short description: c program prints by using puts
 */
