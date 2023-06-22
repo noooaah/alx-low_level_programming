@@ -7,7 +7,6 @@
  */
 int main(void)
 {
-	int i, n;
 
 	int x = 1, y = 2, t = 50, n = x + y;
 
