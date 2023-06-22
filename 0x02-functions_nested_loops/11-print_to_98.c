@@ -2,7 +2,6 @@
 /**
  * print_to_98 - print natural numbers
  * @n: integer number
- * Return: 0 always
  * Description: prints from n to 98
  */
 void print_to_98(int n)
@@ -13,26 +12,20 @@ void print_to_98(int n)
 
 		for (i = n; i <= 98; i++)
 		{
-			_putchar(i + '0');
-			_putchar(',');
-			_putchar(' ');
+			printf("%d, ", i;)
 		}
 	}
 
-	else
+	else if (n >= 98)
 	{
 		int j;
 
 		for (j = n; j >= 98; j--)
 		{
-			_putchar(j + '0');
-			_putchar(',');
-			_putchar(' ');
+			printf("%d, ", j);
 		}
 	}
 
 	_putchar('\n');
-	
-	return (0);
 }
 
