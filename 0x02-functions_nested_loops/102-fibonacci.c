@@ -8,10 +8,13 @@
 int main(void)
 {
 
-	int x = 1, y = 2, t = 50, n = x + y;
+	int x = 1, y = 2, n = 3;
 
-	while (t--)
+	printf("%d, %d, ", x, y);
+
+	while (n <= 50)
 	{
+
 		printf("%d, ", n);
 		x = y;
 		y = n;
