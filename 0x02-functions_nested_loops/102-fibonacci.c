@@ -8,7 +8,7 @@
 int main(void)
 {
 
-	int x = 1, y = 2, n = 3;
+	int x = 1, y = 2, n = 0;
 
 	printf("%d, %d, ", x, y);
 
