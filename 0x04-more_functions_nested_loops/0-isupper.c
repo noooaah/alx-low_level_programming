@@ -13,5 +13,5 @@ int _isupper(int c)
 	else
 		return (0);
 
-	__putchar('\n');
+	_putchar('\n');
 }
