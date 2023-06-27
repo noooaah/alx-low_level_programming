@@ -3,13 +3,10 @@
  * reset_to_98 - make number to 98
  * @*n: integer pointer
  * description: change any number to 98
- * Return: *p 
+ * Return: 98
  */
 void reset_to_98(int *n)
 {
-	int *p = &n;
 
-	*p = 98;
-
-	return (*p);
+	return (98);
 }
