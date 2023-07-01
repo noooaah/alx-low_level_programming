@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
  * main - entry code
- * description: print single-digit numbers 
+ * description: print single-digit numbers
  * Return: 0
  */
 int main(void)
