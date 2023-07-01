@@ -1,4 +1,4 @@
-#include "main.h"
+#include <stdio.h>
 /**
  * main - main function
  * description: print all single digit number
@@ -9,4 +9,5 @@ int main(void)
 
 	for (i = 0; i < 10; i++)
 		putchar('0' + i);
+	putchar('\0');
 }
