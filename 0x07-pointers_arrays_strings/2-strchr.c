@@ -4,7 +4,7 @@
  * @s: string
  * @c: char
  * description: a function that locates a character in a string.
- * Return: c if found 
+ * Return: c if found
  */
 char *_strchr(char *s, char c)
 {
