@@ -1,6 +1,9 @@
 #include "main.h"
 /**
  * *_memset - function fills memory
+ * @s: string
+ * @b: char
+ * @n: integer
  * description: a program that fills memory with constant byte
  * Return: s
  */
