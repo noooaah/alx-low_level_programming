@@ -28,11 +28,14 @@ char *str_concat(char *s1, char *s2)
 		s1++;
 		k++;
 	}
+	p[k] = *s1;
 	while (*s2 != '\0')
 	{
 		p[k] = *s2;
 		s2++;
 		k++;
 	}
+	p[k] = *s2;
+
 	return (p);
 }
