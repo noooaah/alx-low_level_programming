@@ -1,42 +1,63 @@
-#include "variadic_functions.h"
-#include <stdio.h>
 #include <stdarg.h>
-#include <stdlib.h>
+#include <stdio.h>
+
 /**
-* print_all - a function prints all arguments
-* @format: the format
-* Return: void
-*/
-void print_all(const char * const format, ...) {
-    va_list args;
-    const char *ptr = format;
-    va_start(args, format);
-    char c;
-    int i;
-    float f;
-    char *s;
+ * print_all - Prints formatted output based on format specifiers
+ * @format: A list of format specifiers (c, i, f, s)
+ * @...: Arguments corresponding to the format specifiers
+ */
 
-    while (*ptr) {
-        if (*ptr == 'c') {
-            c = va_arg(args, int);
-            printf("%c", c);
-        } else if (*ptr == 'i') {
-            i = va_arg(args, int);
-            printf("%d", i);
-        } else if (*ptr == 'f') {
-            f = va_arg(args, double);  // floats are promoted to double in varargs
-            printf("%f", f);
-        } else if (*ptr == 's') {
-            s = va_arg(args, char *);
-            if (s == NULL) {
-                printf("(nil)");
-            } else {
-                printf("%s", s);
-            }
-        }
-        ptr++;
-    }
+void print_all(const char * const format, ...)
+{
+	va_list args;
+	const char *ptr = format;
+	va_start(args, format);
+	char c;
+	int i;
+	float f;
+	char *s;
+	int first = 1;
 
-    va_end(args);
-    printf("\n");
+	while (*ptr)
+	{
+		if (*ptr == 'c')
+		{
+			if (!first)
+				printf(", ");
+			c = va_arg(args, int);
+			printf("%c", c);
+			first = 0;
+		}
+		else if (*ptr == 'i')
+		{
+			if (!first)
+				printf(", ");
+			i = va_arg(args, int);
+			printf("%d", i);
+			first = 0;
+		}
+		else if (*ptr == 'f')
+		{
+			if (!first)
+				printf(", ");
+			f = va_arg(args, double);
+			printf("%f", f);
+			first = 0;
+		}
+		else if (*ptr == 's')
+		{
+			if (!first)
+				printf(", ");
+			s = va_arg(args, char *);
+			if (s == NULL)
+				printf("(nil)");
+			else
+				printf("%s", s);
+			first = 0;
+		}
+		ptr++;
+	}
+
+	va_end(args);
+	printf("\n");
 }
