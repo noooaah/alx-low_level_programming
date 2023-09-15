@@ -8,45 +8,35 @@
 * Return: void
 */
 void print_all(const char * const format, ...) {
-  int i = 0;
-  while (format[i] != '\0') {
-    switch (format[i]) {
-      case 'c': {
-        int arg = va_arg(args, int);
-        if (arg == '\0') {
-          printf("(nil)");
-        } else {
-          printf("%c", arg);
+    va_list args;
+    const char *ptr = format;
+    va_start(args, format);
+    char c;
+    int i;
+    float f;
+    char *s;
+
+    while (*ptr) {
+        if (*ptr == 'c') {
+            c = va_arg(args, int);
+            printf("%c", c);
+        } else if (*ptr == 'i') {
+            i = va_arg(args, int);
+            printf("%d", i);
+        } else if (*ptr == 'f') {
+            f = va_arg(args, double);  // floats are promoted to double in varargs
+            printf("%f", f);
+        } else if (*ptr == 's') {
+            s = va_arg(args, char *);
+            if (s == NULL) {
+                printf("(nil)");
+            } else {
+                printf("%s", s);
+            }
         }
-        break;
-      }
-      case 'i': {
-        int arg = va_arg(args, int);
-        printf("%d", arg);
-        break;
-      }
-      case 'f': {
-        float arg = va_arg(args, float);
-        printf("%f", arg);
-        break;
-      }
-      case 's': {
-        char *arg = va_arg(args, char *);
-        if (arg == NULL) {
-          printf("(nil)");
-        } else {
-          printf("%s", arg);
-        }
-        break;
-      }
-      default: {
-        // Ignore any other characters.
-        break;
-      }
+        ptr++;
     }
-    i++;
-  }
 
-  printf("\n");
+    va_end(args);
+    printf("\n");
 }
-
